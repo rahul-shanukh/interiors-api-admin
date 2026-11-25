@@ -1,0 +1,8 @@
+app:
+  api:
+    path-prefix: /api
+
+spring:
+  threads:
+    virtual:
+      enabled: true

@@ -1,0 +1,60 @@
+
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Keep source-level target directories excluded too
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+local-secrets.properties
+*.pem
+*.key
+service-account*.json
+firebase-adminsdk*.json
+
+# Neon
+.neon
+
+# Java
+*.class
+*.log
+
+# Spring Tools Suite
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Gradle
+build/
+
+# VS Code
+.vscode/
+
+# Node.js
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
