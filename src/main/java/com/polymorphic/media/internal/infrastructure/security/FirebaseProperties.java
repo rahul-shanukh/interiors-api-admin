@@ -1,30 +1,16 @@
 package com.polymorphic.media.internal.infrastructure.security;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * Externalized Firebase security settings.
  */
+@Validated
 @ConfigurationProperties(prefix = "firebase")
-public class FirebaseProperties {
+public record FirebaseProperties (
 
-    private String projectId;
-    private String credentialsLocation;
-
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public String getCredentialsLocation() {
-        return credentialsLocation;
-    }
-
-    public void setCredentialsLocation(String credentialsLocation) {
-        this.credentialsLocation = credentialsLocation;
-    }
-}
+        String projectId,
+        String credentialsLocation
+){}
 

@@ -1,6 +1,7 @@
 package com.polymorphic.media.internal.infrastructure.security;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -13,5 +14,15 @@ public record FirebasePrincipal(
         Set<String> roles,
         Map<String, Object> claims
 ) {
+    public FirebasePrincipal{
+        Objects.requireNonNull(uid, "uid is required");
+
+        if (uid.isBlank()) {
+            throw new IllegalArgumentException("Firebase UID cannot be blank");
+        }
+
+        roles = Set.copyOf(Objects.requireNonNull(roles, "roles is required"));
+        claims  = Map.copyOf(Objects.requireNonNull(claims, "claims is required"));
+    }
 }
 
